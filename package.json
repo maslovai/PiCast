@@ -10,9 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/maslovai/PiCast.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["weather", "Raspberry-Pi", "PiCast"],
+  "author": "Paula MookerJee, Kyle Richey, Ashkaan Jaberi, Iryna Maslova",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/maslovai/PiCast/issues"
   },
