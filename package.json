@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/maslovai/PiCast/issues"
   },
-  "homepage": "https://github.com/maslovai/PiCast#readme"
+  "homepage": "https://github.com/maslovai/PiCast#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0"
+  }
 }
