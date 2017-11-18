@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pi-Cast/PiCast"
+    "url": "git+https://github.com/Pi-Cast/PiCast.git"
   },
   "keywords": [],
   "author": "",
