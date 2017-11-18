@@ -4,7 +4,7 @@
   "description": "Raspberry Pi turns on led lights to indicate the daily weather forecast by geolocation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
+    "jest": "^21.2.1",
     "superagent": "^3.8.1"
   }
 }
