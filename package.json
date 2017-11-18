@@ -1,0 +1,27 @@
+{
+  "name": "PiCast",
+  "version": "1.0.0",
+  "description": "Raspberry Pi turns on led lights to indicate the daily weather forecast by geolocation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pi-Cast/PiCast.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pi-Cast/PiCast/issues"
+  },
+  "homepage": "https://github.com/Pi-Cast/PiCast#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "dotenv": "^4.0.0",
+    "jest": "^21.2.1",
+    "mongoose": "^4.13.4",
+    "superagent": "^3.8.1"
+  }
+}
