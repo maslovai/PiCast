@@ -17,16 +17,6 @@ const mockData = {
         }
    }
 
-let createRecord = function(data){  
-    
-    return new Promise((resolve, reject) => {
-        console.log(data.req)
-        let testRecord = create(data.req);
-        console.log('in promise: ', testRecord);
-        resolve(testRecord)
-    })
-}  
-
 describe('create-record ', () => {
     it('should create a record and save it to the database',()=>{
         create(mockData.req)
