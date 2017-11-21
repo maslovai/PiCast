@@ -23,4 +23,4 @@ let getWeather = module.exports = () => {
     .catch(err => console.log(err.message));
 };
 
-// getWeather();
+getWeather();
