@@ -8,7 +8,7 @@ mongoose.Promise = require('bluebird');
 
 module.exports = (req) => {
   mongoose.connect(process.env.MLAB, {useMongoClient: true});
-  
+  console.log(req)
   let record = new Record({
     'city': req.body.current_observation.display_location.full, 
     'temperature': req.body.current_observation.temp_f, 
@@ -18,6 +18,7 @@ module.exports = (req) => {
     .then(record => {
       console.log(record);
       mongoose.disconnect();
+      return record;
     })
     .catch(err => {
       console.log(err.message);

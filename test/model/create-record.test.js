@@ -1,38 +1,40 @@
 'use strict';
 
-const Record = require('../../model/record');
+const expect = require('expect');
 const create = require('../../model/create-record');
-// const superagent = require('superagent');
-const mongoose = require('mongoose');
-mongoose.Promise = require('bluebird');
 
-describe('create-record should create a record and save it to the database', () => {
-
-    let mockData = {
-        req : {
-            body : {
-                current_observation : {
-                    display_location : {
-                        full : "Moscow"
-                    },
-                    temp_f : "below zero",
-                    icon : "always snow"
+const mockData = {
+    req : {
+         body : {
+             current_observation : {
+                display_location : {
+                  full : "Moscow"
+                  },
+                temp_f : "below zero",
+                icon : "always snow"
                 }
             }
         }
-    }
+   }
 
-    let createRecord = ()=>{
-        return new Promise((resovle, reject) => {
-            resolve(create(mockData))
-        })
-        .then(record => {
-            expect(record).city.toBe("Moscow")
-        })
-        .catch(err=>reject(err))
-    }
+let createRecord = function(data){  
     
+    return new Promise((resolve, reject) => {
+        console.log(data.req)
+        let testRecord = create(data.req);
+        console.log('in promise: ', testRecord);
+        resolve(testRecord)
+    })
+}  
 
-    expect().toBe('Moscow');
-
+describe('create-record ', () => {
+    it('should create a record and save it to the database',()=>{
+        create(mockData.req)
+        .then(record => {
+            expect(record.city).toBe("Moscow")
+            expect(record._id).not.toBe(undefined);
+        })
+        .catch(err=>console.log(err));
+    })
+    
 })
