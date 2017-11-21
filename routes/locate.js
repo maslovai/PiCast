@@ -1,7 +1,7 @@
 'use strict';
 
 require('dotenv').config();
-const superagent = require('superagent');
+const superagent = require('bluebird').promisifyAll(require('superagent'));
 
 module.exports = () => {
   return new Promise((resolve, reject) => {
@@ -11,3 +11,4 @@ module.exports = () => {
       .catch(err => reject('ERROR', err.message, '- geolookup failed'));
   });
 };
+
