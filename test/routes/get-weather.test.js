@@ -1,6 +1,5 @@
 'use strict';
 
-const superagent = require('superagent');
 const getWeather = require('../../routes/get-weather.js');
 const locateMock = require('./lib/locate-mock.js');
 const mockRecord = require('./lib/mockRecord.js');
