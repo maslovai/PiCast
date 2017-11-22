@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 const forecast = require('./forecastDisplay');
 const temperature = require('./temperature');
@@ -8,12 +8,10 @@ const temperature = require('./temperature');
   const Gpio = require('onoff').Gpio,
   button = new Gpio(26, 'in', 'both');
   let led = new Gpio(18, 'out');
-   
-  let watch =  0;
+
   console.log('before the watch');
 
-  button.read(function(err, value) {
-   console.log('button is ', button);
+  button.watch(function(err, value) {
    console.log('in the watch'); 
    if(err) console.log('err is ', err);
      console.log('hello');
