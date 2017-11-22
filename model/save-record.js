@@ -13,7 +13,7 @@ module.exports = (cityRecord) => {
     'state': cityRecord.state,
     'temperature': cityRecord.temperature,
     'forecast': cityRecord.forecast,
-    'alert': cityRecord.alert,
+    'weatherAlert': cityRecord.alert,
   });
 
   return record.save()

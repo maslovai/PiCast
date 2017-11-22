@@ -1,7 +1,6 @@
 'use strict';
 
 require('dotenv').config();
-const superagent = require('bluebird').promisifyAll(require('superagent'));
 const getLocation = require('./locate.js');
 const createRecord  = require('../model/create-record.js');
 const saveRecord = require('../model/save-record.js');
