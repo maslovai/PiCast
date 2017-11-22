@@ -5,10 +5,9 @@ const superagent = require('bluebird').promisifyAll(require('superagent'));
 
 module.exports = () => {
   return new Promise((resolve, reject) => {
-    let location = {};
-    superagent
-      .get(`http://api.wunderground.com/api/${process.env.API_KEY}/geolookup/q/autoip.json`)
+    superagent.get(`http://api.wunderground.com/api/${process.env.API_KEY}/geolookup/q/autoip.json`)
       .then(data => {
+        let location = {};
         location.state = data.body.location.state;
         location.city = data.body.location.city;
         resolve(location);
