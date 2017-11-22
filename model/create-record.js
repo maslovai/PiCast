@@ -8,8 +8,8 @@ mongoose.Promise = require('bluebird');
 module.exports = (location) => {
   return new Promise((resolve,reject) => {
 
-    // let city = 'San_Diego';
-    // let state =  'CA';
+    // let city = 'Kingston';
+    // let state =  'WA';
     let city = location.city || 'San_Francisco';
     let state = location.state || 'CA';
     console.log('Getting forecast for: ', city,state);
