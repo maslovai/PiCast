@@ -1,7 +1,7 @@
 'use strict';
 
 const expect = require('expect');
-const temp = require('../lib/light-display/mocktemp.js');
+const temp = require('../lib/mocks/mocktemp.js');
 
 describe('Temperature module', function(){
 
