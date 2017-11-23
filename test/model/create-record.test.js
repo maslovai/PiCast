@@ -2,6 +2,7 @@
 
 const expect = require('expect');
 const create = require('../../model/create-record');
+const deleteTestData = require('../routes/get-weather');
 
 const mockData = {
     req : {
@@ -16,6 +17,10 @@ const mockData = {
             }
         }
    }
+
+afterAll(()=>{
+    deleteTestData();
+})
 
 describe('create-record ', () => {
     it('should create a record and save it to the database',()=>{
