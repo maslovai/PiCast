@@ -19,6 +19,6 @@ createRecord(location)
     });
     return record;
   })
-  .then(console.log)
+  .then(console.log)  // Paula this is where you'd get the data object and can pass into your two modules
   .catch(console.log);
 
