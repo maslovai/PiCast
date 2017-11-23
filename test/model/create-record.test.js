@@ -10,8 +10,8 @@ const mockData = {
                 display_location : {
                   full : "Moscow"
                   },
-                temp_f : "below zero",
-                icon : "always snow"
+                temp_f : "0",
+                icon : "snow"
                 }
             }
         }
