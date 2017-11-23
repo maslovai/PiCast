@@ -3,7 +3,7 @@ const create = require('../model/create-record');
 const newest = require('../lib/find-newest')
 const expect = require('expect');
 const superagent = require('superagent');
-const getFresh = require('../routes/get-weather');
+const deleteTestData = require('../routes/get-weather');
 
 const mockData = {
     req : {
@@ -20,7 +20,7 @@ const mockData = {
 }
 
 afterAll(()=>{
-    getFresh();
+    deleteTestData();
 })
 
 describe('find-newest', ()=>{
