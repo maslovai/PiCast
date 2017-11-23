@@ -23,6 +23,7 @@ createRecord(location)
   })
   .then(record => {
     console.log(`Displaying weather for: ${record.city}, ${record.state}`);
+    console.log(record);
     forecast(record.forecast);
     temperature(record.temperature);
   })  
