@@ -15,3 +15,4 @@ module.exports = () => {
       .catch(err => reject('ERROR', err.message, '- geolookup failed'));
   });
 };
+
