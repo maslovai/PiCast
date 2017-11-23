@@ -2,6 +2,8 @@
 
 const createRecord = require('../model/create-record.js');
 const Record = require('../model/record.js');
+const forecast = require('../lib/light-display/forecast.js');
+const temperature = require('../lib/light-display/temperature.js');
 
 const location = {
   city: process.argv[2],
@@ -19,6 +21,10 @@ createRecord(location)
     });
     return record;
   })
-  .then(console.log)  // Paula this is where you'd get the data object and can pass into your two modules
+  .then(record => {
+    console.log(`Displaying weather for: ${record.city}, ${record.state}`);
+    forecast(record.forecast);
+    temperature(record.temperature);
+  })  
   .catch(console.log);
 
