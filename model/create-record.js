@@ -26,8 +26,10 @@ module.exports = (location) => {
           .then(data => {
             try {
               cityData.alert = data.body.alerts[0].type;
+              cityData.alertDescription = data.body.alerts[0].description;
             } catch(err) {
               cityData.alert = 'none';
+              cityData.alertDescription = 'none';
             }
             return cityData;
           })
