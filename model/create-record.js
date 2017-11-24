@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const superagent = require('superagent');
+const colors = require('colors');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
@@ -12,7 +13,7 @@ module.exports = (location) => {
     // let state =  'WA';
     let city = location.city || 'San_Francisco';
     let state = location.state || 'CA';
-    console.log('Getting forecast for: ', city,state);
+    console.log('Getting forecast for: '.green, city,state);
     
     superagent.get(`http://api.wunderground.com/api/${process.env.API_KEY}/conditions/q/${state}/${city}.json`)  
       .then(data => {

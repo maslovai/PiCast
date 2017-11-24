@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const Record = require('./record.js');
+const printForecast = require('../lib/print-forecast.js');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
@@ -18,7 +19,7 @@ module.exports = (cityRecord) => {
 
   return record.save()
     .then(record => {
-      console.log(record);
+      printForecast(record);
       mongoose.disconnect();
     })
     .catch(err => {

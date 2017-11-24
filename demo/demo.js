@@ -4,6 +4,7 @@ const createRecord = require('../model/create-record.js');
 const Record = require('../model/record.js');
 const forecast = require('../lib/light-display/forecast.js');
 const temperature = require('../lib/light-display/temperature.js');
+const printForecast = require('../lib/print-forecast.js');
 
 // const location = {
 //   city: process.argv[2],
@@ -23,9 +24,9 @@ module.exports = (location) => {
       return record;
     })
     .then(record => {
-      console.log(record);
+      printForecast(record);
       forecast(record.forecast, record.alert);
       temperature(record.temperature);
-    })  
+    })
     .catch(console.log);
 };
