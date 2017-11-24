@@ -20,6 +20,7 @@ module.exports = (location) => {
         'temperature': data.temperature,
         'forecast': data.forecast,
         'alert': data.alert,
+        'alertDescription': data.alertDescription,
       });
       return record;
     })
@@ -28,5 +29,5 @@ module.exports = (location) => {
       forecast(record.forecast, record.alert);
       temperature(record.temperature);
     })
-    .catch(console.log);
+    .catch(console.log('Good job. You broke it.'));
 };

@@ -35,6 +35,7 @@ module.exports = (location) => {
           })
           .then((cityRecord) => resolve(cityRecord))
           .catch(err => reject('ERROR', err.message, '- derped getting forecast'));
-      });
+      })
+      .catch(console.log);
   });
 };
