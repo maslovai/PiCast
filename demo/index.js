@@ -7,7 +7,7 @@ const showWeather = require('./demo.js');
 const schema = {
   properties: {
     city: {
-      pattern: /[a-zA-Z_]+/,
+      pattern: /^[a-zA-Z_]+$/,
       message: 'Please use an underscore "_" instead of a space',
     },
     state: {
