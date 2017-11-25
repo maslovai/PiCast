@@ -1,26 +1,17 @@
 'use strict';
-const create = require('../model/create-record');
-const newest = require('../lib/find-newest')
+const create = require('./create-record-mock');
+const newest = require('../../lib/find-newest')
 const expect = require('expect');
 const superagent = require('superagent');
-const Record = require('../model/record');
+const Record = require('../../model/record');
 
-const mockData = {
-    req : {
-         body : {
-             current_observation : {
-                display_location : {
-                  full : "testCity"
-                  },
-                temp_f : "10",
-                icon : "cloudy"
-            }
-        }
-    }
+const mockLocation = {
+    city: "Moscow",
+    state: "RU"
 }
 
 afterAll(()=>{
-    Record.remove({'city':"testCity"})
+    Record.remove({'city':'Moscow'})
     .then(()=>console.log('cleared of test data'))
     .catch()
 })
@@ -29,12 +20,12 @@ describe('find-newest', ()=>{
 
     it('should return the latest record from the database', ()=>{
         
-         create(mockData.req)
+         create(mockLocation)
              .then((record) => {
               newest()
              .then(record=>{
-                 expect(record.city).toBe("testCity");
-                 expect(record.forecast).toBe("snow");
+                 expect(record.city).toBe("Moscow");
+                 expect(record.state).toBe("RU")
              })
         .catch(err=>console.log(err))
     })
