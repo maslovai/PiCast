@@ -23,9 +23,11 @@
   "homepage": "https://github.com/Pi-Cast/PiCast#readme",
   "dependencies": {
     "bluebird": "^3.5.1",
+    "colors": "^1.1.2",
     "dotenv": "^4.0.0",
     "mongoose": "^4.13.4",
     "node-cron": "^1.2.1",
+    "prompt": "^1.0.0",
     "rpio": "^0.9.19",
     "superagent": "^3.8.1"
   },

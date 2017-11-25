@@ -8,6 +8,7 @@ const record = new mongoose.Schema({
   temperature: {type: String, required:true},
   forecast: {type:String, required: true},
   alert: {type:String},
+  alertDescription: {type:String},
 });
 
 module.exports = mongoose.model('Record', record);
