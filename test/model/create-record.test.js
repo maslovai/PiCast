@@ -2,14 +2,15 @@
 
 const expect = require('expect');
 const create = require('../../model/create-record');
-const deleteTestData = require('../routes/get-weather');
+const Record = require('../../model/record');
 
 const mockData = {
     req : {
          body : {
              current_observation : {
                 display_location : {
-                  full : "Moscow"
+                  city : "Moscow",
+                  state:"RU"
                   },
                 temp_f : "0",
                 icon : "snow"
@@ -17,17 +18,23 @@ const mockData = {
             }
         }
    }
+const mockLocation = {
+    city:"Moscow",
+    state:"Russia"
+}
 
-afterAll(()=>{
-    deleteTestData();
-})
+// afterAll(()=>{
+//     Record.remove({'city':"Moscow"})
+//     .then(()=>console.log('cleared of test data'))
+//     .catch()
+//  })
+
 
 describe('create-record ', () => {
-    it('should create a record and save it to the database',()=>{
-        create(mockData.req)
+    it('should create a record',()=>{
+        create(mockLocation)
         .then(record => {
-            expect(record.city).toBe("Moscow")
-            expect(record._id).not.toBe(undefined);
+            expect(record.city).toBe('Moscow');
         })
         .catch(err=>console.log(err));
     })
