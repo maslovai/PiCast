@@ -12,7 +12,7 @@ module.exports = (location) => {
     // let state =  'WA';
     let city = location.city || 'San_Francisco';
     let state = location.state || 'CA';
-    console.log('Getting forecast for: ', city,state);
+    console.log('Getting forecast for: ', city, state);
     
     superagent.get(`http://api.wunderground.com/api/${process.env.API_KEY}/conditions/q/${state}/${city}.json`)  
       .then(data => {
@@ -33,6 +33,6 @@ module.exports = (location) => {
           .then((cityRecord) => resolve(cityRecord))
           .catch(err => reject('ERROR', err.message, '- derped getting forecast'));
       })
-      .catch(err => console.log('incorrect request', err))
+      .catch(err => reject('ERROR', err.message, '-fix the city, state'))
   });
 };

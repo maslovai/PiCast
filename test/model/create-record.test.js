@@ -20,7 +20,7 @@ const mockData = {
    }
 const mockLocation = {
     city:"Moscow",
-    state:"Russia"
+    state:"RU"
 }
 
 // afterAll(()=>{
@@ -35,6 +35,7 @@ describe('create-record ', () => {
         create(mockLocation)
         .then(record => {
             expect(record.city).toBe('Moscow');
+            expect(record.state).toBe('RU')
         })
         .catch(err=>console.log(err));
     })
