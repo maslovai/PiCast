@@ -21,8 +21,8 @@ const schema = {
 prompt.start();
 prompt.message = '';
 
-console.log('\n Hello User. Welcome to the PiCast Demo :) \n'.green);
-console.log('Please enter a US City and State to see its PiCast!'.green);
+console.log('\n Hello User. Welcome to the PiCast Demo :) \n'.blue);
+console.log('Please enter a US City and State to see its PiCast!'.blue);
 console.log('    * A two word city must have a "_" separating the words.');
 console.log('    * And please use two letter abbreviation for the State. \n');
 
