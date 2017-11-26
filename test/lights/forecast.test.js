@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 const sinon = require('sinon');
-const forecast = require('/Users/kylerichey/codefellows/401/midterm-project/PiCast/lib/mocks/mockforecast.js');
+const forecast = require('../mocks/mockforecast.js');
 
 describe('solid lights', function() {
 
