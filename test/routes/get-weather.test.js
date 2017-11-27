@@ -1,33 +1,21 @@
 'use strict';
 
-const getWeather = require('../../routes/get-weather.js');
-const locateMock = require('./lib/locate-mock.js');
-const mockRecord = require('./lib/mockRecord.js');
+const getWeatherMock = require('../routes/lib/get-weather-mock');
 
-describe('getWeather function', () => {
-  // getLocation tests
-  test('should return a city on getLocation module success', () => {
-    return locateMock('good')
-      .then(location => expect(location).toBe('Maui'));
-  });
-  test('should return ERROR if on getLocation module failure', () => {
-    return locateMock('bad')
-      .catch(error => expect(error).toBe('ERROR'));
-  });
-
-  // saveRecord tests
-  test('should return mongoose record object on success', () => {
-    return mockRecord('good')
+describe('getWeather', () => {
+  test('should return a mock city weather object', () => {
+    return getWeatherMock('pass')
       .then(record => {
-        expect(record.city).toBe('Maui');
-        expect(record.temperature).toBe('69');
-        expect(record.forecast).toBe('Sunny');
+        expect(record.city).toEqual('Maui');
+        expect(record.temperature).toEqual('69');
+        expect(record.forecast).toEqual('Sunny');
       });
   });
-  test('should return error if something goes wrong', () => {
-    return mockRecord('bad')
-      .catch(error => expect(error).toBe('ERROR'));
+  test('should return ERROR if something goes wrong', () => {
+    return getWeatherMock('fail')
+      .catch(err => {
+        expect(err).toEqual('ERROR');
+      });
   });
-});
 
-// make mock of save record -> then test resolve/reject o each 
+});

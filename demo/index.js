@@ -33,7 +33,7 @@ prompt.get(schema, (err,result) => {
   };
   
   console.log('\n');
-  if(location.state === 'uw'){
+  if(location.state === 'uw' || 'UW'){
     console.log('UW - 41');
     console.log('WSU - 14');
     console.log('Hi Kelati. Go Dawgs! \n');
