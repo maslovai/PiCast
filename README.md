@@ -13,9 +13,9 @@ Create a `.env` file in the root directory of your project. Add environment-spec
 
  ## PiCast Keys
 
- ![Forecast key] (graphics-README/PI_FORECAST.png?raw=true "PiCast Forecast Key")
+ ![Forecast key](graphics-README/PI_FORECAST.png?raw=true)
 
- ![Temperature key](graphics-README/PI_TEMP.png?raw=true "PiCast Temperature Key")
+ ![Temperature key](graphics-README/PI_TEMP.png?raw=true)
 
 
 * Weather Request
