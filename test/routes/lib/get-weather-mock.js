@@ -1,7 +1,5 @@
 'use strict';
 
-const mockRecord = require('./mockRecord');
-
 module.exports = (outcome) => {
   return new Promise((resolve,reject) => {
     if(outcome === 'pass'){
