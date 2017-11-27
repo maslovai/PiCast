@@ -18,9 +18,9 @@ describe('cleardb ', ()=>{
         })
         .then(cleardb)
         .then(Record.find().count()
-            .then(countNew=>{
-                console.log('after delete: ', countNew, recordCount)
-                expect(countNew).toEqual(recordCount-1)
+            .then(newCount=>{
+                console.log('after delete: ', newCount, recordCount)
+                expect(newCount).toEqual(recordCount-1)
                 mongoose.disconnect();
                 })
             .catch(err)
