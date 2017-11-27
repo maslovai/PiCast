@@ -4,7 +4,7 @@
   "description": "Raspberry Pi turns on led lights to indicate the daily weather forecast by geolocation",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage --verbose"
   },
   "repository": {
     "type": "git",

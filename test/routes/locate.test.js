@@ -4,16 +4,16 @@ const locateMock = require('../routes/lib/locate-mock.js');
 
 describe('LOCATE module', () => {
   test('should return an object with city and state properties', () => {
-    locateMock('pass')
+    return locateMock('pass')
       .then(location => {
-        expect(location.city).toBe('winterfell');
-        expect(location.state).toBe('westeros');
+        expect(location.city).toEqual('winterfell');
+        expect(location.state).toEqual('westeros');
       });
   });
-  test('should return an error if something goes wrong', () => {
-    locateMock('fail')
-      .then(location => {
-        expect(location).toBe('ERROR');
+  test('should return ERROR if something goes wrong', () => {
+    return locateMock('fail')
+      .catch(err => {
+        expect(err).toEqual('ERROR');
       });
   });
 });
