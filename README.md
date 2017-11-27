@@ -17,6 +17,8 @@ Create a `.env` file in the root directory of your project. Add environment-spec
 
  ![Temperature key](graphics-README/PI_TEMP.png?raw=true)
 
+ ![Raspberry Pi](graphics-README/GGPercyMacmillanIII.jpg?raw=true)
+
 
 * Weather Request
 * Weather Data Parsing
