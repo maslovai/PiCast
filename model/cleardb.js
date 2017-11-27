@@ -11,14 +11,13 @@ module.exports = () => {
       let removeID = record._id;
       Record.remove({_id:removeID})
         .then(()=> {
-        //   console.log('updating db...');
+          console.log('updating db...');
           mongoose.disconnect();
         })
         .catch(err=>{
           console.log(err);
           mongoose.disconnect();  
-        });
+        })
     })
-    .catch();
-         
+    .catch()
 };
