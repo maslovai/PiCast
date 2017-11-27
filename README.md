@@ -9,6 +9,7 @@ Create a `.env` file in the root directory of your project. Add environment-spec
 `MLAB=mongodb://myGithubUsername:myMlabAccount.mlab.com:port/database`
 
 In its' own terminal - run the following command to set-up the automatic hourly request and storage of weather data based on your location `node weather-index.js`. 
+
 Make sure to run this step prior to running `npm start` in its own terminal (next step), failing to do so will result in not receiving any new and current weather data.
 
 After completing prior step - to run using the button listener on raspberry pi:
