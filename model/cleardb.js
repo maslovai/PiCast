@@ -9,6 +9,7 @@ module.exports = () => {
     
     Record.findOne().sort({'date':1}).limit(1)
       .then(record=>{
+       if(!record) resolve();
        let removeID = record._id;
        Record.remove({_id:removeID})
           .then(()=> {
