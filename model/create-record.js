@@ -8,11 +8,6 @@ mongoose.Promise = require('bluebird');
 
 module.exports = (location) => {
   return new Promise((resolve,reject) => {
-  //   if (typeof(location) != 'object') {
-  //     location = {};
-  //     location.city = "San_Francisco";
-  //     location.state = "CA"
-  // }
 
     let city = location.city || 'San_Francisco';
     let state = location.state || 'CA';

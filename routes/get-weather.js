@@ -7,13 +7,13 @@ const saveRecord = require('../model/save-record.js');
 const cleanDB = require('../model/cleardb.js');
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MLAB, {useMongoClient: true});
-// weather request
+
 let getWeather = module.exports = () => {
   getLocation()
     .then(createRecord)
     .then(saveRecord)
     .then(cleanDB)
-    .then(()=>mongoose.disconnect())
+    .then(() => mongoose.disconnect())
     .catch(err => {
       console.log(err.message); 
     });
