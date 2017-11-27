@@ -9,32 +9,25 @@ const mockLocation = {
     state: "RU"
 }
 
-let savedID;
-
-afterAll(()=>{
-    Record.remove({'city':'Moscow'})
-    .then(()=>console.log('cleared of test data'))
-    .catch()
-})
-
 describe('save-record', ()=>{
     it('should save a new record to the database', ()=>{
+        mongoose.connect(process.env.MLAB, {useMongoClient: true});
         create(mockLocation)
         .then(record=>{
-            // console.log(record);
             saveRecord(record)
-                .then(()=>{
-                    mongoose.connect(process.env.MLAB, {useMongoClient: true});
-                    Record.findOne({'city':'Moscow'})
-                })
-                    .then(()=>{
-                        // console.log('found in DB:', record);   
-                        expect(record.city).toBe('Moscow');
-                        expect(record._id).not.toBe('undefined');
-                        mongoose.disconnect();
+                .then((record)=>{
+                    expect(record.city).toBe('Moscow');
+                    expect(record._id).not.toBe('undefined');
+                    Record.remove({'city':'Moscow'})
+                        .then(()=>{
+                            // console.log('cleared of test data');
+                            mongoose.disconnect()
+                        })
+                        .catch()
                     })
-                    .catch(err=> console.log(err))
-                .catch(err=>console.log(err))
+                .catch(err=>console.log(err))   
         })
+        .catch()
+        // console.log("IN TEST: ");
     })
 })    
