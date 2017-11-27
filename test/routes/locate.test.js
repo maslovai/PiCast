@@ -1,8 +1,10 @@
 'use strict';
 
+requie('dotenv').config();
 const locateMock = require('../routes/lib/locate-mock.js');
+const locate = require('../../routes/locate.js');
 
-describe('LOCATE module', () => {
+describe('LOCATE Mock', () => {
   test('should return an object with city and state properties', () => {
     return locateMock('pass')
       .then(location => {
