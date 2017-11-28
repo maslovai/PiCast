@@ -9,16 +9,16 @@ module.exports = () => {
     
     Record.findOne().sort({'date':1}).limit(1)
       .then(record=>{
-       let removeID = record._id;
-       Record.remove({_id:removeID})
+        let removeID = record._id;
+        Record.remove({_id:removeID})
           .then(()=> {
             console.log('updating db...');
             resolve();
           })
           .catch(err=>{
             console.log(err); 
-          })
+          });
       })
-      .catch(err => reject(err))
-  })
+      .catch(err => reject(err));
+  });
 };
