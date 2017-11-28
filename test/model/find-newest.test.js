@@ -1,8 +1,6 @@
 'use strict';
-const create = require('./create-record-mock');
+
 const newest = require('../../lib/find-newest')
-const expect = require('expect');
-const superagent = require('superagent');
 const Record = require('../../model/record');
 
 describe('find-newest', ()=>{
