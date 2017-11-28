@@ -1,9 +1,9 @@
 'use strict';
-const create = require('./create-record-mock');
-const newest = require('../../lib/find-newest')
-const expect = require('expect');
-const superagent = require('superagent');
-const Record = require('../../model/record');
+/*global afterAll*/
+
+const newest = require('../../lib/find-newest.js');
+const Record = require('../../model/record.js');
+
 
 describe('find-newest', ()=>{
      it('should return the latest record from the database', ()=>{
@@ -16,3 +16,4 @@ describe('find-newest', ()=>{
         .catch(err=>console.log(err))
     })
 })
+

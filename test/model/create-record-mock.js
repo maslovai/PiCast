@@ -9,9 +9,9 @@ mongoose.Promise = require('bluebird');
 module.exports = (location) => {
   return new Promise((resolve,reject) => {
     if (typeof(location) != 'object') {
-        location = {};
-        location.city = "San_Francisco";
-        location.state = "CA"
+      location = {};
+      location.city = 'San_Francisco';
+      location.state = 'CA';
     }
 
     let city = location.city || 'San_Francisco';
@@ -20,13 +20,13 @@ module.exports = (location) => {
     console.log('Getting forecast for: '.green, city,state);
 
     let testObject = {
-        city : location.city,
-        state : location.state,
-        temperature : '50',
-        forecast : 'rain',
-        alert : 'FLO',
-        alertDescription : 'flood'
-    }  
-    resolve (testObject)
-  })
-}
+      city : location.city,
+      state : location.state,
+      temperature : '50',
+      forecast : 'rain',
+      alert : 'FLO',
+      alertDescription : 'flood',
+    };
+    resolve (testObject);
+  });
+};
