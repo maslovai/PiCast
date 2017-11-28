@@ -8,7 +8,11 @@ Create a `.env` file in the root directory of your project. Add environment-spec
 
 `MLAB=mongodb://myGithubUsername:myMlabAccount.mlab.com:port/database`
 
- To run using the button listener on raspberry pi:
+In its' own terminal - run the following command to set-up the automatic hourly request and storage of weather data based on your location `node weather-index.js`. 
+
+Make sure to run this step prior to running `npm start` in its own terminal (next step), failing to do so will result in not receiving any new and current weather data.
+
+After completing prior step - to run using the button listener on raspberry pi:
   `npm start` from root directory
 
  ## PiCast Keys
@@ -18,9 +22,4 @@ Create a `.env` file in the root directory of your project. Add environment-spec
  ![Temperature key](graphics-README/PI_TEMP.png?raw=true)
 
  ![Raspberry Pi](graphics-README/GGPercyMacmillanIII.jpg?raw=true)
-
-
-* Weather Request
-* Weather Data Parsing
-* Send GPIO Signal / Button listener
 
