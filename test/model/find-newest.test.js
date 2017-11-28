@@ -24,6 +24,7 @@ describe('find-newest', ()=>{
              .then((record) => {
               newest()
              .then(record=>{
+                 console.log(record)
                  expect(record.city).toBe("Moscow");
                  expect(record.state).toBe("RU")
              })
