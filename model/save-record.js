@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
 module.exports = (cityRecord) => {
-  mongoose.connect(process.env.MLAB, {useMongoClient: true});
   
   let record = new Record({
     'city': cityRecord.city,
@@ -21,10 +20,9 @@ module.exports = (cityRecord) => {
   return record.save()
     .then(record => {
       printForecast(record);
-      mongoose.disconnect();
+      return(record);
     })
     .catch(err => {
       console.log(err.message);
-      mongoose.disconnect();
     });
 };
